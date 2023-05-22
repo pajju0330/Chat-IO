@@ -1,35 +1,38 @@
+import "./App.css";
 
-import './App.css';
+import React from "react";
+import ChatPage from "./components/ChatPage";
 
-import React from 'react';
-import Group from './Group';
 function App() {
-  const [group, setGroup] = React.useState('none');
-  if(group === 'none')
-  {
+  const [join, setJoin] = React.useState(false);
+  const [nickname, setNickname] = React.useState("");
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      if(!nickname){
+         alert('Please enter a nickname to join the chat')
+         return
+      }
+      setJoin(true);
+  }
+  if (!join) {
     return (
-      <div className='App'>
-         <div className='App-header'>
-           <div>
-             Choose your group to chat !!
-           </div>
-           <div className='chooseGrp'>
-             <button onClick={()=> setGroup('RCB')}>RCB Fans</button>
-             <button onClick={()=> setGroup('MI')}>MI fans</button>
-           </div>
-         </div>
+      <div className="App">
+        <div className="App-header">
+          <div>Welcome to WCE Chat-IO</div>
+          <div className="chooseGrp" style={{margin:'0'}} >
+              <input placeholder="Enter your nickname" value={nickname} onChange={(e) => {
+                setNickname(e.target.value);
+              }}/>
+          </div>
+          <button type="submit" onClick={handleSubmit}>Join</button>
+        </div>
       </div>
-   );
-  }else if(group === 'RCB'){
+    );
+  } else {
     return (
-      <Group title="RCB" setGroup={setGroup}/>
-    )
-  }else{
-    return (
-      <Group title="MI" setGroup={setGroup}/>
+      <ChatPage username={nickname}/>
     )
   }
-
 }
 
 export default App;

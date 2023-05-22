@@ -1,0 +1,98 @@
+.container {
+display: flex;
+  background-color: #282c34;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.left{
+    border: 2px solid white;
+    width: 25vw;
+    height: 98vh;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    border: 2px solid white;
+    height: 98vh;
+    justify-content: space-between;
+}
+
+.topBar{
+    padding-left: 2rem;
+    font-size: larger;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid wheat;
+    height: 5rem;
+}
+
+.bottomBar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid pink;
+    width: 70vw;
+    height: 5rem;
+}
+
+.input{
+    width: 70%;
+}
+
+.bottomBar > button {
+    width: 10%;
+    height: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .bottomBar > .input{
+        width: 70%;
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    .bottomBar > button{
+        width: 3rem;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+    }
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    height: 80vh;
+}
+
+.chat{
+    color: white;
+    border-bottom: 2px solid white;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 4rem;
+    display: flex;
+}
+.chat > p{
+    position: absolute;
+    font-size: 10px;
+
+    margin-bottom: 3rem;
+    color: lawngreen;
+}
+.leftDirection{
+    justify-content: flex-start;
+}
+.rightDirection > p{
+    margin-right: -1rem;
+}
+.leftDirection > p{
+    margin-left: -1rem;
+}
+.rightDirection{
+    justify-content: flex-end;
+}

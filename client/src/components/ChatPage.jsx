@@ -1,7 +1,7 @@
 import React from "react";
 import "./ChatPage.css";
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://chatio-backend-7564.onrender.com");
 const ChatPage = ({username}) => {
   const [message, setMessage] = React.useState("");
   const [details, setDetails] = React.useState([]);
